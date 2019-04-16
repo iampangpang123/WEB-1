@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery的获取</title>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript">
+	 $(function () {//1.js的获取方式
+		
+		document.getElementById("btn1").onclick=function(){
+			
+		location.href="jquery1.html";	
+		}
+	});
+	/*$(function  btn2() {
+		
+		location.href="jquery1.html";	
+		
+	});*///这样写，不点btn2a按钮，代码也会自动执行
+	$(function () {
+		$("#btn2").click(function(){
+			location.href="jquery1.html";	
+			
+		});
+	});
+	$(document).ready(function(){
+		$("#p1").click(function(){//带#原因四因为这是id选择器
+			$(this).hide();
+		});
+	});
+</script>
+</head>
+<body>
+<input type="button" value="点我1" id="btn1">
+<input type="button" value="点我2" id="btn2" onclick="btn2">
+<p id="p1">点我隐藏</p>
+
+</body>
+</html>

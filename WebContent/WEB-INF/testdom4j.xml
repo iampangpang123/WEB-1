@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<person> 
+  <p1> 
+    <name>小翠</name>  
+    <age>18</age>  
+    <sex>女</sex>  
+    <school>郑大</school> 
+  </p1>  
+  <p1> 
+    <name>lisi</name>  
+    <age>18</age>  
+    <sex>女</sex>  
+    <school>郑大</school> 
+  </p1> 
+</person>

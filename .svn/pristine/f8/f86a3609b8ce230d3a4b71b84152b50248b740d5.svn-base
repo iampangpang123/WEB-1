@@ -1,0 +1,42 @@
+package Sort;
+
+import java.util.Arrays;
+
+public class BubbleSort {
+	public static void main(String[] args) {
+
+		/*
+		 * 定义数组的两种方法 1.int[] arr={1,2,3,4}//引用类型数组不建议使用 2.String[] arr=new String[3];
+		 * 
+		 */
+		int[] arr = { 9, 8, 7, 6, 5 };
+		for (int i = 0; i < arr.length - 1; i++) {
+			
+			for (int j = 0; j < arr.length - i - 1; j++) {
+				
+				if (arr[j] > arr[j + 1]) {
+					System.out.println(arr.length - 1 - i);
+					int t = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = t;
+					System.out.println(Arrays.toString(arr));
+
+				}
+			}
+		}
+
+		// 遍历方式2
+
+		/*
+		 * for (int i : arr) { System.out.println(i); }
+		 */
+		// 遍历方式3
+		System.out.println("最后结果"+Arrays.toString(arr));
+		
+		// 遍歷方式1
+		/*
+		 * for(int m=0;i<arr.length;m++) { System.out.println(arr[m]); }
+		 */
+	}
+
+}

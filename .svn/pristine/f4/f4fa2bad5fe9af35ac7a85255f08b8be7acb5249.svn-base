@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>选择器类型与隐藏显示效果</title>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	/* 
+			$("p").hide();//直接这样写，没有舰艇按钮，会直接执行
+	
+	*/
+	  $("#btn1").click(function(){
+			$("p").hide();//标签选择器，，所有p标签，我们这里只有一个所以可以用
+	  });
+	  $("#btn2").click(function(){
+			$("#p1").show();//id选择器
+	  });
+	  $("#btn3").click(function(){
+		  $("p").toggle();//显示与隐藏自动切换
+	  });
+	  $("#btn4").click(function(){//淡入已隐藏内容
+		  $("#div1").fadeIn();
+		  $("#div2").fadeIn("slow");
+		  $("#div3").fadeIn(3000);
+		});
+	  $("#btn5").click(function(){//淡出已显示内容
+		  $("#div1").fadeOut();
+		  $("#div2").fadeOut("slow");
+		  $("#div3").fadeOut(3000);
+		});
+	  $("#btn6").click(function(){
+		  $("#div1").fadeTo("slow",0.15);
+		  $("#div2").fadeTo("slow",0.4);
+		  $("#div3").fadeTo("slow",0.7);
+		});
+	});
+</script>
+</head>
+<body>
+点按钮：</br>
+<input type="button" value="隐藏" id="btn1" />
+<input type="button" value="显示" id="btn2"/>
+<input type="button" value="一键自动切换" id="btn3"/>
+<input type="button" value="淡入已隐藏内容" id="btn4"/>
+<input type="button" value="淡出已显示内容" id="btn5"/>
+<input type="button" value="改变透明度" id="btn6"/>
+
+<p id="p1">点按钮一我就隐藏，点按钮二我就显示，神奇吗？</p>
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+</body>
+</html>

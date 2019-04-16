@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My JSP '动态显示时间.jsp' starting page</title>
+
+<style type="text/css">
+#div1 {
+	width: 200px;
+	hight: 200px;
+	border-color: blue;
+	border: 1
+}
+</style>
+</head>
+
+
+<body>
+	<div id="div1"></div>
+</body>
+
+<script type="text/javascript">
+
+function aa(){
+	
+	var div=document.getElementById("div1");
+	div.innerHTML=new Date().toLocaleString();
+	
+	
+}
+setInterval("aa()", 1000);
+</script>
+
+</html>

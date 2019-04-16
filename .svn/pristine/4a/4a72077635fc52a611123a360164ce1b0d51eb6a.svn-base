@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquer追加文本，添加元素，以及删除元素，设置css</title>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+<style type="text/css">
+
+.blue
+{
+	color:blue;
+}
+</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$("#btn1").click(function() {
+			$("#p1").append("<b>文本已经添加</b>");//在结尾插入文本
+			//$("#p1").prepend("<b>文本已经添加</b>");//在开头追加文本
+		});
+		$("#btn2").click(function() {
+			$("#p1").toggle();
+		});
+		$("#btn3").click(function() {
+			//	$("#ol1").append("<li>文本已经添加</li>");
+			$("#ol1").prepend("<li>文本已经添加</li>");
+		});
+		$("#btn4").click(function() {
+               $("p").remove("#p2");//删除所有p标签的p2标签、
+               //$("#p1").remove();//删除p1标签
+		});
+		$("#btn5").click(function() {
+           // $("p").addClass("blue");//这个blue是上面css里面设置的
+            $("p").css("background-color","yellow");//这是直接设置csss
+          
+		});
+
+	});
+</script>
+</head>
+<body>
+
+	<p id="p1">点击按钮文本可追加，</p>
+	</br>
+
+	<p id="p2">点击按钮可以删除我，</p>
+	</br>
+	<ol id="ol1">
+		<li>aaaaa</li>
+		<li>bbbbb</li>
+	</ol>
+	<button id="btn1">p标签添加文本</button>
+	<button id="btn3">列表添加文本</button>
+	<button id="btn2">文本隐藏或者显示</button>
+	<button id="btn4">点击即可删除p2标签</button>
+		<button id="btn5">点击添加样式</button>
+
+</body>
+</html>

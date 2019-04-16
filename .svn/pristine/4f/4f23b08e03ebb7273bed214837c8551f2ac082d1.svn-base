@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>网页</title>
+</head>
+
+<body>
+	<div >
+		<img alt="aaa"  height="200" width="200" src="C:\Users\92397\Desktop\新建文件夹\timg (3).jpeg"/>
+	</div>
+	<div>
+		<img alt="aaa" height="200" width="200"  src="C:\Users\92397\Desktop\新建文件夹\timg (2).jpeg"/>
+	</div>
+	<div>
+		<img alt="aaa"  height="200" width="200" src="C:\\Users\\92397\\Desktop\\新建文件夹\\timg(3).jpeg"/>
+	</div>
+	<div>
+		<img alt="aaa"  height="200" width="200" src="C:\\Users\\92397\\Desktop\\新建文件夹\\timg(4).jpeg"/>
+	</div>
+</body>
+</html>

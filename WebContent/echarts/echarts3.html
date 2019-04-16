@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Echarts数据异步加载</title>
+<!-- 首先我们准备一份需要加载的数据文件echartsData.json，数据内容： -->
+<!-- 因为是异步加载，所以有时候数据加载会慢，或者延迟。在数据没有加载前，图表这样的。面对这样的图表，肯定会觉得这是没有数据吗，还是图表有问题.对于这块ECharts增加了一个加载动画。 -->
+<script type="text/javascript" src="echarts.min.js"></script>
+<script type="text/javascript" src="jquery-1.8.3.js"></script>
+</head>
+
+<body>
+	<div id="chartmain1" style="width: 600px; height: 400px;">aaa</div>
+</body>
+<script type="text/javascript">
+	//初始化echarts实例
+	var myChart = echarts.init(document.getElementById('chartmain1'));
+	//设置图标配置项
+	myChart.setOption({
+		title : {
+			text : 'ECharts 异步加载数据'
+		},
+		tooltip : {},
+		legend : {
+			data : [ '访问量' ]
+		},
+		xAxis : {
+			data : []
+		},
+		yAxis : {},
+		series : [ {
+			name : '访问量',
+			type : 'bar',
+			data : []
+		} ]
+	})
+	//异步加载数据
+	$.get('echartsData1.json').done(function(data) {
+		data = eval('(' + data + ')');
+		myChart.setOption({
+			xAxis : {
+				data : data.name
+			},
+			series : [ {
+				//根据名字对应到相应的系列
+				name : "访问量",
+				data : data.data
+			} ]
+		})
+	})
+</script>
+</html>

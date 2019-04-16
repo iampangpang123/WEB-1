@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EChart.js 简单入门</title><!-- js代码最好放在最后面/body后面 -->
+<script type="text/javascript" src="echarts.min.js"></script>
+
+</head>
+
+<body>
+	<div id="chartmain1" style="width: 600px; height: 400px;">aaa</div>
+	<div id="chartmain2" style="width: 600px; height: 400px;">aaa</div>
+	<div id="chartmain3" style="width: 600px; height: 400px;">aaa</div>
+</body>
+<script type="text/javascript">
+	//指定图标的配置和数据
+	var option = {
+		title : {
+			text : 'ECharts 数据统计'
+		},
+		tooltip : {},
+		legend : {
+			data : [ '用户来源' ]
+		},
+		xAxis : {
+			data : [ "Android", "IOS", "PC", "Ohter" ]
+		},
+		yAxis : {
+
+		},
+		series : [ {
+			name : '访问量',
+			type : 'line',
+			data : [ 500, 200, 360, 100 ]
+		} ]
+	};
+	//初始化echarts实例
+	var myChart = echarts.init(document.getElementById('chartmain1'));
+
+	//使用制定的配置项和数据显示图表
+	myChart.setOption(option);
+</script>
+<script type="text/javascript">
+	var option = {
+		title : {
+			text : 'ECharts 数据统计'
+		},
+		series : [ {
+			name : '访问量',
+			type : 'pie',
+			radius : '60%',
+			data : [ {
+				value : 500,
+				name : 'Android'
+			}, {
+				value : 200,
+				name : 'IOS'
+			}, {
+				value : 360,
+				name : 'PC'
+			}, {
+				value : 100,
+				name : 'Ohter'
+			} ]
+		} ]
+	};
+	//初始化echarts实例
+	var myChart = echarts.init(document.getElementById('chartmain2'));
+
+	//使用制定的配置项和数据显示图表
+	myChart.setOption(option);
+</script>
+<script type="text/javascript">
+
+var xAxisData = [];
+var data1 = [];
+var data2 = [];
+for (var i = 0; i < 100; i++) {
+    xAxisData.push('类目' + i);
+    data1.push((Math.sin(i / 5) * (i / 5 -10) + i / 6) * 5);
+    data2.push((Math.cos(i / 5) * (i / 5 -10) + i / 6) * 5);
+}
+
+option = {
+    title: {
+        text: '柱状图动画延迟'
+    },
+    legend: {
+        data: ['bar', 'bar2'],
+        align: 'left'
+    },
+    toolbox: {
+        // y: 'bottom',
+        feature: {
+            magicType: {
+                type: ['stack', 'tiled']
+            },
+            dataView: {},
+            saveAsImage: {
+                pixelRatio: 2
+            }
+        }
+    },
+    tooltip: {},
+    xAxis: {
+        data: xAxisData,
+        silent: false,
+        splitLine: {
+            show: false
+        }
+    },
+    yAxis: {
+    },
+    series: [{
+        name: 'bar',
+        type: 'bar',
+        data: data1,
+        animationDelay: function (idx) {
+            return idx * 10;
+        }
+    }, {
+        name: 'bar2',
+        type: 'bar',
+        data: data2,
+        animationDelay: function (idx) {
+            return idx * 10 + 100;
+        }
+    }],
+    animationEasing: 'elasticOut',
+    animationDelayUpdate: function (idx) {
+        return idx * 5;
+    }
+};//初始化echarts实例
+var myChart = echarts.init(document.getElementById('chartmain3'));
+
+//使用制定的配置项和数据显示图表
+myChart.setOption(option);
+</script>
+
+
+</html>

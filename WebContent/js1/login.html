@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登陆表单校验</title>
+</head>
+<script type="text/javascript">
+	function login() {
+		var zh=document.getElementById("zh").value;
+		var psw=document.getElementById("psw").value;
+		
+		
+		if (document.loginform.zhname.value=="") {
+			document.getElementById("zhmessage").innerHTML="账号不能为空";
+		  alert("aaaaaaaaa");
+		 loginform.zhname.focus();//获取焦点。
+		   return;
+		}
+		else{
+			document.getElementById("zhmessage").innerHTML="账正确";
+			
+		}
+		if (psw == "") {
+			document.getElementById("pswmessage").innerHTML="密码不能为空";
+			 alert("bbb");
+			 loginform.pswname.focus();//获取焦点。
+			   return;
+		}
+
+	}
+</script>
+<body>
+	<form action="" method="get" name="loginform">
+		账号：<input type="text" id="zh" name="zhname"
+			placeholder="请输入账号；不能为null" onfocus="login()">
+		<p id="zhmessage"></p>
+		密码：<input type="password" id="psw" name="pswname"
+			placeholder="请输入密码，不能为空"> 
+			<input type="button" value="登陆"
+			onclick="login()">	<p id="pswmessage"></p>
+	</form>
+<a href="test1.html">aa</a>
+
+</body>
+</html>

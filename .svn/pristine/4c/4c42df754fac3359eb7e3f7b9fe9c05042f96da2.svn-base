@@ -1,0 +1,50 @@
+package thread;
+
+public class TestLocal implements Runnable {
+
+	 Object o1 = new Object();
+		Object o2 = new Object();
+	int count = 0;
+
+	public static void main(String[] args) {
+		TestLocal local = new TestLocal();
+		Thread t1 = new Thread(local);
+		Thread t2 = new Thread(local);
+		t1.start();
+		
+		local.count = 1;
+		t2.start();
+	}
+
+	@Override
+	public  void  run() {
+		if (count == 0) {
+			synchronized (o1) {
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			synchronized (o2) {
+				System.out.println("线程1执行完毕");
+			}
+		}
+		if (count == 1) {
+			synchronized (o2) {
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+			synchronized (o1) {
+				System.out.println("线程2执行完毕");
+			}
+		}
+	}
+
+}
