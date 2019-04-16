@@ -1,4 +1,4 @@
-package page1_100;
+package date;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
