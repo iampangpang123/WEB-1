@@ -42,7 +42,7 @@ public class LoopOut implements Runnable {
 	}
 
 	public synchronized void mainRun() throws Exception {
-		while (!flag) {// 如果不是ture
+		while (!flag) {// 如果是ture
 			this.wait();
 		}
 		for (int i = 1; i <= 2; i++) {
@@ -55,7 +55,7 @@ public class LoopOut implements Runnable {
 	}
 
 	public synchronized void subRun() throws Exception {
-		while (flag) {
+		while (flag) {//如果是flag
 			this.wait();
 		}
 		for (int i = 1; i <= 2; i++) {

@@ -23,7 +23,6 @@ public class TestList {
 			System.out.println(object.toString());
 			;
 		}
-
 	}
 
 	@Test

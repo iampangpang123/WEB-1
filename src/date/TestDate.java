@@ -32,5 +32,20 @@ public class TestDate {
 		System.out.println(a.equals(b));
 		 System.out.println(a==b);
 	}
+	@Test
+	public void test2() {//日期转字符串
+		/*
+		 * SimpleDateFormat sdf = new SimpleDateFormat( "  " );
+		 * 
+		 * String str=sdf.parse(new Date());
+		 */
+
+        SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-MM-dd HH:mm:ss "); 
+
+        String str = sdf.format(new Date()); 
+        System.out.println(str);
+
+		}
+	
 
 }
