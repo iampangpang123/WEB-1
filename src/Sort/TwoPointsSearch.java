@@ -2,15 +2,21 @@ package Sort;
 
 import org.junit.Test;
 
+/*
+ * 时间复杂度为log2N。由于辅助空间是常数级别的所以：
+空间复杂度是O(1);
+ */
 public class TwoPointsSearch {
 	public static void main(String[] args) {
 		TwoPointsSearch pointsSearch = new TwoPointsSearch();
 
-		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-		int p = 9;// 数组中查找p这个元素
-		//System.out.println(pointsSearch.test2(arr, p));
+		int arr2[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+		int arr[]= {0, 1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 9};
+		int p = 8;// 数组中查找p这个元素
+		// System.out.println(pointsSearch.test2(arr, p));
 		System.out.println(pointsSearch.test3(arr, p));
-		
+
+	
 	}
 
 	/**
@@ -50,7 +56,7 @@ public class TwoPointsSearch {
 		StringBuilder error = new StringBuilder("数组中不存在这个数");
 
 		while (lift <= right) {
-			mid =(lift+right)/2;
+			mid = (lift + right) / 2;
 			if (p == arr[mid]) {
 				success.append(arr[mid]);
 				return success;
@@ -63,26 +69,28 @@ public class TwoPointsSearch {
 		}
 		return error;
 	}
-	/**  
-	* @Description:3-9练习二分算法 
-	* @return void    返回类型 
-	*/
+
+	/**
+	 * @Description:3-9练习二分算法
+	 * @return void 返回类型
+	 */
 	@Test
-	public int test3(int arr[],int p) {
-		int low=0;
-		int hight=arr.length-1;
-		
-		while(low<hight) {
-			int mid=(low+hight)/2;
-			if(p==arr[mid]) {
+	public int test3(int arr[], int p) {
+		int low = 0;
+		int hight = arr.length - 1;
+
+		while (low < hight) {
+			int mid = (low + hight) / 2;
+			if (p == arr[mid]) {
 				return 1;
-			}else if (p<arr[mid]) {
-				hight=mid-1;
-			}else {
-				low=mid+1;
+			} else if (p < arr[mid]) {
+				hight = mid - 1;
+			} else {
+				low = mid + 1;
 			}
 		}
 		return -1;
 	}
+
 
 }

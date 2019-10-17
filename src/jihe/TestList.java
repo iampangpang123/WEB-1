@@ -7,7 +7,16 @@ import java.util.List;
 import org.junit.Test;
 
 import page1_100.jicheng.Person;
-
+/*
+ * list 是有序的，可以重复的
+ *     ：有序是指的放入元素的顺序是有序的：比如放：1  5 6 7 9 8，打印出来还是 1  5 6 7 9 8
+ *     ：不是指：里面数字大小是有序的。
+ *     
+ *set:也是一样，指的是放入元素的顺序
+ * 
+ * 
+ * 
+ */
 public class TestList {
 
 	@Test

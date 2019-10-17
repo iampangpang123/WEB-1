@@ -69,26 +69,48 @@ public class shushu {
 		int m = new Scanner(System.in).nextInt();
 		int j;
 		int count = 0;
-		int sum=0;
-		
+		int sum = 0;
+
 		System.out.println(m);
 		for (int i = 2; i <= m; i++) {
 
-			for(j=2;j<=i;j++) {
-				if(i%j==0) {
+			for (j = 2; j <= i; j++) {
+				if (i % j == 0) {
 					break;
 				}
 			}
-			if(i==j) {
+			if (i == j) {
 				System.out.println(j);
 				count++;
-				sum+=i;
+				sum += i;
 			}
 		}
 		System.out.println(sum);
 		System.out.println(count);
+	}
 
-		
+	@Test
+	public void test3() {
+		System.out.println("求0-n所有素素，请输入n的值");
+		int m = new Scanner(System.in).nextInt();
+		int i;
+		int j ;
+		int count=0;
+		for (i = 2; i < m; i++) {
+
+			for (j = 2; j < i; j++) {
+				if (i % j == 0) {
+					break;
+				}
+			}
+			if (i == j) {
+				count+=1;
+                 System.out.println(j);
+                 System.out.println(count+"个素数");
+			}
+		}
+	
+
 	}
 
 }

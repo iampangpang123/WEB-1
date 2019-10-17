@@ -70,9 +70,6 @@ public class Test1 {
 	public void insertionSort(){
 		
 		int[] arr = { 6, 3, 5, 8, 2, 7 };
-		for(int i=1;i<arr.length-1;i++){
 		
-			
-		}
 	}
 }

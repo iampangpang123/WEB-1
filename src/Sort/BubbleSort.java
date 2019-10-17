@@ -12,9 +12,9 @@ public class BubbleSort {
 		 * 
 		 */
 		int[] arr = { 9, 8, 7, 6, 5 };
-		for (int i = 0; i <arr.length-1; i++) {
-			
-			for (int j = 0; j < arr.length - i - 1; j++) {
+		for (int i = 0; i <arr.length-1; i++) {//因为到最后，最后一个数5已经变成最大的了，不用再对比了
+			//为社么j是0？，因为第数字开始排序，依然要重第一个数字开始，
+			for (int j = 0; j < arr.length - i -1; j++) {
 				
 				if (arr[j] > arr[j + 1]) {
 					System.out.println(arr.length - 1 - i);

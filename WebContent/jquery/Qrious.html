@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>二维码入门小demo</title>
+
+</head>
+<body>
+<img id="qrious">
+<script src="../js/qrious.min.js"></script>
+<script>
+ var qr = new QRious({
+	   element:document.getElementById('qrious'),//默认这样写即可
+	   size:250, 	   level:'H',	   value:'http://www.itcast.cn'
+	});
+</script>
+</body>
+</html>
