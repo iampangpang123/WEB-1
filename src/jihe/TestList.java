@@ -19,6 +19,7 @@ import page1_100.jicheng.Person;
  */
 public class TestList {
 
+	
 	@Test
 	public void test1() {
 		List list = new ArrayList();
@@ -135,4 +136,19 @@ public class TestList {
 		System.out.println("下面是排好序的樣子");
 		System.out.println(list);
 	}
+	@Test
+	public void test5() {
+		List<String> list1 = new ArrayList<String>();
+	   
+
+	    List<String> list2 = new ArrayList<String>();
+	    
+	      list1=null;
+	      list2=null;
+	    
+	    
+         System.out.println("aaaa");
+
+	}
+
 }

@@ -33,7 +33,7 @@ public class TestMap {
 		// 遍历map中的值
 		for (String value : map.values()) {
 			System.out.println("key = " + value);
-			
+
 		}
 		// 3. 使用Iterator遍历
 		Iterator<Map.Entry<Integer, String>> it = map.entrySet().iterator();
@@ -51,4 +51,45 @@ public class TestMap {
 
 	}
 
+	@Test
+	public void test1() {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		map.put("1", "1");
+		map.put("2", "1");
+		map.put("3", "1");
+		map.remove("5");
+		String aa = map.get("4");
+		System.out.println(aa);
+		/*
+		 * if(aa.equals("4")) { System.out.println(aa); }
+		 */
+		System.out.println("bb");
+	}
+	
+	@Test
+	public void test2() {
+		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map2 = new HashMap<String, String>();
+		Object object=new Object();
+		map.put("1", "1");
+		map.put("2", "1");
+		map.put("3", "1");
+
+		map2.remove("1");
+		for (Map.Entry<String, String> entry : map.entrySet()) {
+			System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
+		}
+	}
+
+	
+	@Test
+	public void test3() {
+		Map<String, String> map = new HashMap<String, String>();
+	
+		
+		String a="1";
+		String b="2";
+		System.out.println(a+b);
+	}
 }

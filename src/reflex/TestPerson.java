@@ -36,6 +36,12 @@ public class TestPerson {
 		p.show();
 	}
 
+	/**
+	 **   
+	 * @Description: 如何操作属性 前提是你要现有对象，因为这样属性属于某一个对象
+	 * @param: @throws Exception      
+	 * @return: void      
+	 */
 	@Test
 	public void test3() throws Exception {
 		/*
