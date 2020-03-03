@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
+import com.mchange.lang.StringUtils;
+
 public class TestMap {
 
 	@Test
@@ -61,6 +63,9 @@ public class TestMap {
 		map.remove("5");
 		String aa = map.get("4");
 		System.out.println(aa);
+		if("".equals(aa)) {
+			System.out.println("bb");
+		}
 		/*
 		 * if(aa.equals("4")) { System.out.println(aa); }
 		 */

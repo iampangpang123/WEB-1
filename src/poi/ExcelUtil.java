@@ -1,6 +1,8 @@
 package poi;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Connection;
@@ -21,13 +23,103 @@ public class ExcelUtil {
 
 	/**
 	 **   
+	 * @Description:根据存在的excel模板，导出到excle表格
+	 * @param: @throws Exception      
+	 * @return: void      
+	 * @throws FileNotFoundException 
+	 */
+	@Test
+	public void sqlUserToExcel3() throws FileNotFoundException  {
+		int   count=5;
+        //读取excel模板 
+	     FileInputStream inStream = new FileInputStream(new File("F:\\JavaIO\\文化事业应税服务扣除清单.xls"));
+		HSSFWorkbook wb = new HSSFWorkbook(inStream);
+        //读取了模板内所有sheet内容 
+		HSSFSheet sheet = wb.getSheet("应税服务减除项目清单");
+
+		for(int i=4;i<10;i++) {
+			HSSFRow row=sheet.createRow(i);//第二行開始記錄，下次遍歷開始count++
+			HSSFCell cell0 = row.createCell(0);//第一个单元格，下表从0开始。
+			cell0.setCellValue("111");
+			
+			HSSFCell cell1 = row.createCell(1);//第二个单元格
+			cell1.setCellValue("111");
+			
+			HSSFCell cell2 = row.createCell(2);//第3个单元格
+			cell2.setCellValue("111");
+			
+			HSSFCell cell3 = row.createCell(3);//第4个单元格
+			cell3.setCellValue("2|财政票据");
+			
+			HSSFCell cell4 = row.createCell(4);//第5个单元格
+			cell4.setCellValue("111");
+			HSSFCell cell5 = row.createCell(5);//第6个单元格
+			cell5.setCellValue("1111");
+			count++;//因为count++代表下行开始，不加数据就覆盖了
+		}
+		
+		FileOutputStream out = new FileOutputStream(new File("F:\\JavaIO\\文化事业应税服务扣除清单new.xls"));
+		wb.write(out);
+		// 关流
+		out.flush();
+		out.close();
+
+	}
+
+	
+	/**
+	 **   
+	 * @Description:根据存在的excel模板，导出到excle表格
+	 * @param: @throws Exception      
+	 * @return: void      
+	 */
+	@Test
+	public void sqlUserToExcel2() throws Exception {
+		int   count=60;
+        //读取excel模板 
+	     FileInputStream inStream = new FileInputStream(new File("F:\\JavaIO\\user.xls"));
+		HSSFWorkbook wb = new HSSFWorkbook(inStream);
+        //读取了模板内所有sheet内容 
+		HSSFSheet sheet = wb.getSheet("POI导出测试");
+
+		for(int i=60;i<70;i++) {
+			HSSFRow row=sheet.createRow(i);//第二行開始記錄，下次遍歷開始count++
+			HSSFCell cell0 = row.createCell(0);//第一个单元格，下表从0开始。
+			cell0.setCellValue("111");
+			
+			HSSFCell cell1 = row.createCell(1);//第二个单元格
+			cell1.setCellValue("111");
+			
+			HSSFCell cell2 = row.createCell(2);//第3个单元格
+			cell2.setCellValue("111");
+			
+			HSSFCell cell3 = row.createCell(3);//第4个单元格
+			cell3.setCellValue("2|财政票据");
+			
+			HSSFCell cell4 = row.createCell(4);//第5个单元格
+			cell4.setCellValue("111");
+			HSSFCell cell5 = row.createCell(5);//第6个单元格
+			cell5.setCellValue("1111");
+			count++;//因为count++代表下行开始，不加数据就覆盖了
+		}
+		
+		FileOutputStream out = new FileOutputStream(new File("F:\\JavaIO\\usernew.xls"));
+		wb.write(out);
+		// 关流
+		out.flush();
+		out.close();
+
+	}
+
+	/**
+	 **   
 	 * @Description:根据user表的数据，到处到excle表格
 	 * @param: @throws Exception      
 	 * @return: void      
 	 */
 	@Test
 	public void sqlUserToExcel() throws Exception {
-		int   count=1;
+		int   count=10;
 		// 获得Excel文件输出流
 		FileOutputStream out = new FileOutputStream(new File("F:\\JavaIO\\User.xls"));
 		// 创建excel工作簿对象

@@ -2,11 +2,13 @@ package jihe;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
 
 import page1_100.jicheng.Person;
+
 /*
  * list 是有序的，可以重复的
  *     ：有序是指的放入元素的顺序是有序的：比如放：1  5 6 7 9 8，打印出来还是 1  5 6 7 9 8
@@ -19,7 +21,74 @@ import page1_100.jicheng.Person;
  */
 public class TestList {
 
-	
+	/**
+	 ** 
+	 * @Description:增强for遍历空集合会不会报错
+	 * 
+	 * 综上所述：普通for。增强for遍历空集合都不会报错
+	 */
+	@Test
+	public void test9() {
+
+		List list = new ArrayList();
+		for (int i = 0; i < list.size(); i++) {
+		}
+		System.out.println("普通for循环遍历空集合不会报错");
+		for (Object object : list) {
+			System.out.println(object);
+		}
+		System.out.println("增强for循环遍历空集合不会报错");
+	}
+
+	/**
+	 * 测试结果：ArrayList.add()方法添加一个为null的对象不会产生空指针。而且list长度也会增加。
+	 * 但是，为了防止产生问题，尽量不要添加空对象，先对对象做null判断
+	 * 
+	 * @Description:测试空集合的空指针问题
+	 * @param:
+	 * @return: void
+	 */
+	@Test
+	public void test8() {
+
+		List list = new ArrayList();
+		List list1 = new ArrayList();
+		list.add("张三");
+		list.add("12");
+		list.add("男");
+		list = null;
+		/*
+		 * 集合是nulL,会报空指针下面这行代码 for (int i = 0; i < list.size(); i++) {
+		 * System.out.println(list.get(i)); }
+		 */
+		// 下面也报空指针
+		// list.get(0);
+		// 下面不会报空指针
+		list1.add(list);
+		Person p = null;
+		// 下面也不会报null异常
+		list1.add(p);
+
+	}
+
+	/**
+	 ** 
+	 * @Description:此集合可以用来实现，手写连接池，线程池
+	 * @param:
+	 * @return: void
+	 */
+	@Test
+	public void test7() {
+		LinkedList<String> list = new LinkedList<String>();
+		list.add("aa");
+		list.add("aa");
+
+		list.add("aa");
+		list.add("aa");
+		list.removeFirst();
+
+	}
+
 	@Test
 	public void test1() {
 		List list = new ArrayList();
@@ -136,18 +205,17 @@ public class TestList {
 		System.out.println("下面是排好序的樣子");
 		System.out.println(list);
 	}
+
 	@Test
 	public void test5() {
 		List<String> list1 = new ArrayList<String>();
-	   
 
-	    List<String> list2 = new ArrayList<String>();
-	    
-	      list1=null;
-	      list2=null;
-	    
-	    
-         System.out.println("aaaa");
+		List<String> list2 = new ArrayList<String>();
+
+		list1 = null;
+		list2 = null;
+
+		System.out.println("aaaa");
 
 	}
 

@@ -13,6 +13,11 @@ public class User implements Serializable {
 	private Date createTime;
 	private Integer tokenType;
 	private String password;
+	
+	public static  String getUserKey(String username) {
+	
+		return  "redisKey"+username;
+	}
 
 	public User() {
 	}

@@ -11,6 +11,12 @@ import java.util.Map;
 import org.apache.commons.beanutils.BeanUtils;
 import org.junit.Test;
 
+/**
+ * @Description:map与对象互转
+ * @author: 唐涛
+ * @date:   2019年12月13日 下午2:13:08   
+ *   
+ */
 public class TestString {
 
 	/**
@@ -66,7 +72,6 @@ public class TestString {
 			UserAA useraa = map2bean(maps3, UserAA.class);
 			System.out.println(useraa);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
